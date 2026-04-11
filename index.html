@@ -6,7 +6,7 @@
 <title>One's Passport | 親子留学エージェント｜子どもの未来を、一緒に広げる</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="29152438_m.jpg" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --teal: #7BBFB5;
@@ -363,7 +363,12 @@ footer { background: #122820; padding: 56px 0 28px; }
   }
   .hero-mob-bg {
     position: absolute; inset: 0;
-    background: linear-gradient(160deg, #1e4a3e 0%, #163528 55%, #0f2a20 100%);
+    background: url('29152438_m.jpg') center center / cover no-repeat;
+  }
+  .hero-mob-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(20,58,46,0.45) 0%, rgba(10,30,22,0.55) 100%);
   }
   .hero-mob-sky {
     position: absolute; inset: 0;
@@ -1059,4 +1064,3 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
- 
