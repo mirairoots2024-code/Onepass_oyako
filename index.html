@@ -6,7 +6,7 @@
 <title>One's Passport | 親子留学エージェント｜子どもの未来を、一緒に広げる</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="29152438_m.jpg" rel="stylesheet">
 <style>
 :root {
   --teal: #7BBFB5;
@@ -87,7 +87,7 @@ nav a:hover { color: var(--teal-dark); }
 .nav-cta { background: var(--teal) !important; color: #fff !important; padding: 9px 22px; border-radius: 40px; font-size: 12px !important; font-weight: 600 !important; box-shadow: 0 2px 8px rgba(123,191,181,0.4); }
 .nav-cta:hover { background: var(--teal-dark) !important; color: #fff !important; }
  
-/* ── HERO ── */
+/* ── HERO (Desktop) ── */
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-left { background: var(--offwhite); padding: 140px 60px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
 .hero-left::after { content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 1px; background: var(--border-strong); }
@@ -100,13 +100,16 @@ nav a:hover { color: var(--teal-dark); }
   color: var(--text-primary); margin-bottom: 24px;
 }
 .hero-h1 em { font-style: italic; color: var(--teal-dark); }
-/* ② ヒーロータイトルの変更版スタイル */
 .hero-h1 .kagi { font-style: italic; color: var(--teal-dark); }
 .hero-sub { font-size: 15px; font-weight: 300; color: var(--text-body); line-height: 2.0; max-width: 380px; margin-bottom: 34px; }
 .hero-badges { display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap; }
 .badge { display: inline-flex; align-items: center; gap: 5px; background: #fff; border: 1px solid var(--border-strong); padding: 5px 13px; border-radius: 20px; font-size: 12px; color: var(--text-body); font-weight: 400; }
 .badge-teal { background: var(--teal-pale); border-color: rgba(123,191,181,0.4); color: var(--teal-dark); font-weight: 600; }
 .hero-cta-group { display: flex; flex-direction: column; gap: 14px; }
+ 
+/* ── HERO MOBILE: 縦積みフルスクリーン ── */
+/* スマホ用ビジュアルパネル（上部） */
+.hero-mobile-visual { display: none; }
  
 /* ── LINE CTA BUTTON (共通) ── */
 /* ① LINEバナーボタン共通スタイル */
@@ -343,15 +346,77 @@ footer { background: #122820; padding: 56px 0 28px; }
 .footer-links a:hover { color: rgba(255,255,255,0.85); }
 .footer-bottom { padding-top: 20px; font-size: 11px; color: rgba(255,255,255,0.25); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
  
+/* ── MOBILE VISUAL (hidden desktop) ── */
+.hero-mobile-visual { display: none; }
+ 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   header { padding: 14px 20px; }
   nav a:not(.nav-cta) { display: none; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 100px 24px 52px; }
+ 
+  .hero { display: block; min-height: auto; }
+ 
+  /* スマホ専用ビジュアルパネル */
+  .hero-mobile-visual {
+    display: block; position: relative; width: 100%;
+    height: 58vw; min-height: 230px; max-height: 310px; overflow: hidden;
+  }
+  .hero-mob-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, #1e4a3e 0%, #163528 55%, #0f2a20 100%);
+  }
+  .hero-mob-sky {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 50% at 50% 25%, rgba(123,191,181,0.28) 0%, transparent 65%),
+      radial-gradient(ellipse 90% 50% at 15% 80%, rgba(79,134,168,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 35% at 85% 60%, rgba(242,201,109,0.1) 0%, transparent 60%);
+  }
+  .hero-mob-dots {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .hero-mob-horizon {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
+    background: linear-gradient(180deg, transparent 0%, rgba(16,42,30,0.88) 100%);
+  }
+  .hero-mob-emoji {
+    position: absolute; top: 36%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 76px; opacity: 0.2; user-select: none;
+    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.4));
+  }
+  .hero-mob-catch {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 12px 22px 18px;
+  }
+  .hero-mob-eyebrow {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.1em;
+    color: var(--teal); text-transform: uppercase; margin-bottom: 7px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .hero-mob-eyebrow::before {
+    content: ''; display: block; width: 12px; height: 1.5px; background: var(--teal); flex-shrink: 0;
+  }
+  .hero-mob-catch h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(22px, 6.5vw, 30px);
+    font-weight: 300; line-height: 1.5; color: #fff; letter-spacing: 0.02em;
+  }
+  .hero-mob-catch h2 em { font-style: italic; color: var(--teal); }
+ 
+  /* テキストエリア */
+  .hero-left { padding: 24px 22px 44px; background: var(--offwhite); }
   .hero-left::after { display: none; }
-  .hero-right { height: 240px; }
-  .hero-right-content { padding: 0 24px 28px; }
+  /* スマホではh1とeyebrowはビジュアル内に表示済みなので非表示 */
+  .hero-h1 { display: none; }
+  .hero-eyebrow { display: none; }
+  .hero-sub { font-size: 14px; line-height: 1.9; margin-bottom: 20px; max-width: 100%; }
+  .hero-badges { margin-bottom: 18px; gap: 6px; }
+  .badge { font-size: 11px; padding: 4px 10px; }
+ 
+  .hero-right { display: none; }
   .container { padding: 0 20px; }
   section { padding: 68px 0; }
   .marquee-banner { display: none; }
@@ -413,6 +478,19 @@ footer { background: #122820; padding: 56px 0 28px; }
   </nav>
 </header>
  
+<!-- ① スマホ用ヒーロービジュアルパネル（モバイルのみ表示） -->
+<div class="hero-mobile-visual">
+  <div class="hero-mob-bg"></div>
+  <div class="hero-mob-sky"></div>
+  <div class="hero-mob-dots"></div>
+  <div class="hero-mob-horizon"></div>
+  <div class="hero-mob-emoji">👩‍👧</div>
+  <div class="hero-mob-catch">
+    <div class="hero-mob-eyebrow">🇦🇺 Australia · 🇨🇦 Canada · 🇵🇭 Philippines</div>
+    <h2>子どもの未来は<br><em>「今、見た景色」</em>で<br>決まる。</h2>
+  </div>
+</div>
+ 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
   <div class="hero-left">
@@ -457,23 +535,7 @@ footer { background: #122820; padding: 56px 0 28px; }
     <div class="hero-bg-dots"></div>
     <div class="hero-illustration">👩‍👧</div>
     <div class="hero-right-overlay"></div>
-    <!-- ④ ヒーロー右の引用部分 全カット済み → シンプルな装飾のみ -->
-    <div class="hero-right-content">
-      <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 22px; display: grid; grid-template-columns: repeat(3,1fr); gap: 0;">
-        <div style="text-align:center; padding: 0 12px; border-right: 1px solid rgba(255,255,255,0.1);">
-          <div style="font-family: var(--font-serif); font-size: 32px; font-weight: 300; color: #fff; line-height: 1; margin-bottom: 5px;">3<span style="font-size: 18px;">カ国</span></div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em;">特化留学先</div>
-        </div>
-        <div style="text-align:center; padding: 0 12px; border-right: 1px solid rgba(255,255,255,0.1);">
-          <div style="font-family: var(--font-serif); font-size: 32px; font-weight: 300; color: #fff; line-height: 1; margin-bottom: 5px;">24<span style="font-size: 18px;">h</span></div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em;">LINE返信保証</div>
-        </div>
-        <div style="text-align:center; padding: 0 12px;">
-          <div style="font-family: var(--font-serif); font-size: 32px; font-weight: 300; color: #fff; line-height: 1; margin-bottom: 5px;">¥<span style="font-size: 18px;">0</span></div>
-          <div style="font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em;">相談費用</div>
-        </div>
-      </div>
-    </div>
+    <div class="hero-right-content"></div>
   </div>
 </section>
  
