@@ -154,10 +154,10 @@ nav a:hover { color: var(--teal-dark); }
  
 /* HERO RIGHT: ⑧ 黒→グリーン系グラデに */
 .hero-right { position: relative; background: #1a3830; overflow: hidden; display: flex; align-items: flex-end; }
-.hero-bg { position: absolute; inset: 0; background: linear-gradient(145deg, #1e4a3e 0%, #1a3830 60%); }
-.hero-bg-dots { position: absolute; inset: 0; opacity: 0.05; background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 36px 36px; }
+.hero-bg { position: absolute; inset: 0; background: url('29152438_m.jpg') center center / cover no-repeat; }
+ 
 .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(20,48,38,0.82) 100%); }
-.hero-illustration { position: absolute; top: 45%; left: 50%; transform: translate(-50%, -55%); font-size: 110px; opacity: 0.13; user-select: none; }
+.hero-illustration { display: none; }
 .hero-right-content { position: relative; z-index: 2; padding: 0 48px 56px; width: 100%; }
  
 /* ── MARQUEE ── */
@@ -368,30 +368,15 @@ footer { background: #122820; padding: 56px 0 28px; }
   .hero-mob-bg::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(20,58,46,0.45) 0%, rgba(10,30,22,0.55) 100%);
+    background: linear-gradient(160deg, rgba(20,58,46,0.25) 0%, rgba(10,30,22,0.35) 100%);
   }
-  .hero-mob-sky {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 70% 50% at 50% 25%, rgba(123,191,181,0.28) 0%, transparent 65%),
-      radial-gradient(ellipse 90% 50% at 15% 80%, rgba(79,134,168,0.18) 0%, transparent 55%),
-      radial-gradient(ellipse 40% 35% at 85% 60%, rgba(242,201,109,0.1) 0%, transparent 60%);
-  }
-  .hero-mob-dots {
-    position: absolute; inset: 0; opacity: 0.05;
-    background-image: radial-gradient(circle, #fff 1px, transparent 1px);
-    background-size: 28px 28px;
-  }
+ 
+ 
   .hero-mob-horizon {
     position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
-    background: linear-gradient(180deg, transparent 0%, rgba(16,42,30,0.88) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(16,42,30,0.75) 100%);
   }
-  .hero-mob-emoji {
-    position: absolute; top: 36%; left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 76px; opacity: 0.2; user-select: none;
-    filter: drop-shadow(0 6px 16px rgba(0,0,0,0.4));
-  }
+  .hero-mob-emoji { display: none; }
   .hero-mob-catch {
     position: absolute; bottom: 0; left: 0; right: 0;
     padding: 12px 22px 18px;
@@ -486,10 +471,7 @@ footer { background: #122820; padding: 56px 0 28px; }
 <!-- ① スマホ用ヒーロービジュアルパネル（モバイルのみ表示） -->
 <div class="hero-mobile-visual">
   <div class="hero-mob-bg"></div>
-  <div class="hero-mob-sky"></div>
-  <div class="hero-mob-dots"></div>
   <div class="hero-mob-horizon"></div>
-  <div class="hero-mob-emoji">👩‍👧</div>
   <div class="hero-mob-catch">
     <div class="hero-mob-eyebrow">🇦🇺 Australia · 🇨🇦 Canada · 🇵🇭 Philippines</div>
     <h2>子どもの未来は<br><em>「今、見た景色」</em>で<br>決まる。</h2>
