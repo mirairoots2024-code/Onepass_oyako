@@ -15,58 +15,58 @@
   --blue-dark: #5882A8;
   --blue-pale: #E8EEF5;
   --blue-mid: #C5D5E8;
- 
+
   /* アクセントピンク（PDF右グラデーション） */
   --pink-main: #C9909A;
   --pink-dark: #B0717D;
   --pink-pale: #F7EAEC;
   --pink-mid: #EAC5CA;
- 
+
   /* イエロー（PDFアクセント） */
   --yellow: #F5D16E;
   --yellow-dark: #D4A830;
   --yellow-pale: #FDF6E0;
- 
+
   /* ティール（サポートカラー） */
   --teal: #6BAFC5;
   --teal-dark: #4A92AC;
   --teal-pale: #E3F2F7;
   --teal-mid: #B8DDE8;
- 
+
   /* ニュートラル */
   --offwhite: #F8F6F4;
   --cream: #FDFCFB;
   --section-alt: #F2F6FA;
   --warm-white: #FFFEFE;
- 
+
   /* テキスト */
   --text-primary: #2A2A2A;
   --text-body: #484848;
   --text-muted: #787878;
   --border: rgba(42,42,42,0.08);
   --border-strong: rgba(42,42,42,0.15);
- 
+
   /* PDFグラデーション */
   --grad-main: linear-gradient(135deg, #7B9DC4 0%, #C9909A 100%);
   --grad-light: linear-gradient(135deg, rgba(123,157,196,0.15) 0%, rgba(201,144,154,0.15) 100%);
   --grad-section: linear-gradient(135deg, rgba(123,157,196,0.08) 0%, rgba(201,144,154,0.08) 100%);
- 
+
   --font-sans: 'Noto Sans JP', sans-serif;
   --font-serif: 'Noto Serif JP', serif;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
- 
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: "Noto Sans JP", sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.85; overflow-x: hidden; }
- 
+
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
- 
+
 /* ── STICKY CTA ── */
 /* ⑧ 黒→tealグラデに変更 */
 .sticky-cta {
@@ -86,7 +86,7 @@ body { font-family: "Noto Sans JP", sans-serif; background: var(--cream); color:
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 .sticky-cta a:hover { background: var(--teal-pale); transform: translateY(-1px); }
- 
+
 /* ── HEADER ── */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -101,7 +101,7 @@ nav a { font-size: 12px; font-weight: 500; color: var(--text-body); text-decorat
 nav a:hover { color: var(--teal-dark); }
 .nav-cta { background: var(--blue-main) !important; color: #fff !important; padding: 9px 22px; border-radius: 40px; font-size: 12px !important; font-weight: 600 !important; box-shadow: 0 2px 8px rgba(123,157,196,0.4); }
 .nav-cta:hover { background: var(--blue-dark) !important; color: #fff !important; }
- 
+
 /* ── HERO (Desktop) ── */
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-left { background: var(--offwhite); padding: 140px 60px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
@@ -121,11 +121,11 @@ nav a:hover { color: var(--teal-dark); }
 .badge { display: inline-flex; align-items: center; gap: 5px; background: #fff; border: 1px solid var(--border-strong); padding: 5px 13px; border-radius: 20px; font-size: 12px; color: var(--text-body); font-weight: 400; }
 .badge-teal { background: var(--blue-pale); border-color: rgba(123,157,196,0.4); color: var(--blue-dark); font-weight: 600; }
 .hero-cta-group { display: flex; flex-direction: column; gap: 14px; }
- 
+
 /* ── HERO MOBILE: 縦積みフルスクリーン ── */
 /* スマホ用ビジュアルパネル（上部） */
 .hero-mobile-visual { display: none; }
- 
+
 /* ── LINE CTA BUTTON (共通) ── */
 /* ① LINEバナーボタン共通スタイル */
 .line-btn {
@@ -142,7 +142,7 @@ nav a:hover { color: var(--teal-dark); }
 .line-btn-wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 6px; }
 .line-btn-sub { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
 .line-btn-sub span { display: flex; align-items: center; gap: 4px; }
- 
+
 /* セクション内に埋め込む LINE CTA ブロック */
 .inline-cta {
   background: linear-gradient(135deg, var(--blue-pale) 0%, var(--pink-pale) 100%);
@@ -157,7 +157,7 @@ nav a:hover { color: var(--teal-dark); }
 .inline-cta .line-btn { max-width: 360px; margin: 0 auto; display: flex; }
 .inline-cta-note { font-size: 11px; color: var(--text-muted); margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 .inline-cta-note span::before { content: '✓ '; color: var(--blue-dark); font-weight: 700; }
- 
+
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
   color: var(--text-body); text-decoration: none; font-size: 13px; font-weight: 500;
@@ -166,22 +166,22 @@ nav a:hover { color: var(--teal-dark); }
 }
 .btn-secondary:hover { color: var(--blue-dark); border-color: var(--blue-dark); }
 .hero-note { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-body); margin-top: 8px; flex-wrap: wrap; font-weight: 500; }
- 
+
 /* HERO RIGHT: ⑧ 黒→グリーン系グラデに */
 .hero-right { position: relative; background: linear-gradient(135deg, #6882A8 0%, #A07880 100%); overflow: hidden; display: flex; align-items: flex-end; }
 .hero-bg { position: absolute; inset: 0; background: url('29152438_m.jpg') center center / cover no-repeat; }
- 
+
 .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(60,50,65,0.75) 100%); }
 .hero-illustration { display: none; }
 .hero-right-content { position: relative; z-index: 2; padding: 0 48px 56px; width: 100%; }
- 
+
 /* ── MARQUEE ── */
 .marquee-banner { background: var(--teal-pale); border-top: 1px solid rgba(123,191,181,0.3); border-bottom: 1px solid rgba(123,191,181,0.3); padding: 16px 0; overflow: hidden; }
 .marquee-track { display: flex; gap: 48px; animation: marquee 34s linear infinite; white-space: nowrap; width: max-content; }
 .marquee-item { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--teal-dark); font-weight: 400; }
 .marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--teal); opacity: 0.6; flex-shrink: 0; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
- 
+
 /* ── SECTIONS ── */
 section { padding: 96px 0; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
@@ -191,7 +191,7 @@ section { padding: 96px 0; }
 .section-title em { font-style: italic; color: var(--blue-dark); }
 /* ⑨ section-lead を読みやすく */
 .section-lead { font-size: 15px; font-weight: 400; color: var(--text-body); line-height: 2.0; max-width: 560px; }
- 
+
 /* ── WHAT ── */
 .what-section { background: var(--grad-section); }
 .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; border: 1px solid var(--border-strong); }
@@ -203,7 +203,7 @@ section { padding: 96px 0; }
 /* ⑨ カード内テキスト強化 */
 .what-card h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--text-primary); line-height: 1.5; margin-bottom: 12px; }
 .what-card p { font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; }
- 
+
 /* ── AGE ── */
 .age-section { background: var(--offwhite); }
 .age-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
@@ -226,7 +226,7 @@ section { padding: 96px 0; }
 .age-card.age-1 .age-recommend { color: var(--teal-dark); background: var(--teal-pale); }
 .age-card.age-2 .age-recommend { color: var(--blue-dark); background: var(--blue-pale); }
 .age-card.age-3 .age-recommend { color: var(--yellow-dark); background: var(--yellow-pale); }
- 
+
 /* ── EMPATHY ── */
 .empathy-section { background: var(--grad-section); }
 .empathy-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 52px; }
@@ -243,7 +243,7 @@ section { padding: 96px 0; }
 /* ⑨ empathy テキスト強化 */
 .empathy-item p { font-size: 14px; font-weight: 500; color: var(--text-primary); line-height: 1.85; padding-left: 6px; position: relative; z-index: 1; }
 .empathy-answer { font-size: 13px !important; color: var(--blue-dark) !important; font-weight: 600 !important; margin-top: 10px !important; }
- 
+
 /* ── REASONS ── */
 .reasons-section { background: var(--cream); }
 .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; border: 1px solid var(--border-strong); }
@@ -257,7 +257,7 @@ section { padding: 96px 0; }
 .reason-icon-yellow { background: var(--yellow-pale); }
 .reason-card h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--text-primary); line-height: 1.5; margin-bottom: 12px; }
 .reason-card p { font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; }
- 
+
 /* ── COUNTRIES ── */
 .countries-section { background: var(--offwhite); }
 .countries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; border: 1px solid var(--border-strong); }
@@ -277,7 +277,7 @@ section { padding: 96px 0; }
 .country-desc { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; margin-bottom: 20px; }
 .country-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .ctag { font-size: 11px; padding: 4px 10px; border: 1px solid var(--border-strong); border-radius: 3px; color: var(--text-body); background: var(--cream); font-weight: 400; }
- 
+
 /* ── CONCERNS ── */
 .concerns-section { background: var(--cream); }
 .concerns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 56px; border: 1px solid var(--border-strong); }
@@ -288,7 +288,7 @@ section { padding: 96px 0; }
 .q-icon { width: 22px; height: 22px; background: var(--blue-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0; margin-top: 2px; }
 .concern-a { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; padding-left: 18px; border-left: 2px solid var(--blue-mid); }
 .concern-a strong { color: var(--blue-dark); font-weight: 700; }
- 
+
 /* ── FLOW ── */
 .flow-section { background: var(--grad-section); }
 .flow-timeline { position: relative; margin-top: 56px; }
@@ -301,7 +301,7 @@ section { padding: 96px 0; }
 .flow-phase { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 8px; }
 .flow-step-content h4 { font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
 .flow-step-content p { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; }
- 
+
 /* ── SUPPORTERS BANNER ── */
 .supporters-banner {
   background: var(--grad-main);
@@ -320,7 +320,7 @@ section { padding: 96px 0; }
 }
 .supporters-lead { font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.7; }
 .supporters-lead strong { color: #fff; }
- 
+
 /* ── COUNSELORS 3列 ── */
 .counselors-grid-3 {
   display: grid;
@@ -341,8 +341,8 @@ section { padding: 96px 0; }
 @media (max-width: 768px) {
   .counselors-grid-3 { grid-template-columns: 1fr; }
 }
- 
- 
+
+
 /* ── SUPPORTERS BANNER ── */
 .supporters-banner {
   background: var(--grad-main);
@@ -361,7 +361,7 @@ section { padding: 96px 0; }
 }
 .supporters-lead { font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.75; }
 .supporters-lead strong { color: #fff; font-weight: 700; }
- 
+
 /* ── COUNSELORS 3列グリッド ── */
 .counselors-grid-3 {
   display: grid;
@@ -400,7 +400,7 @@ section { padding: 96px 0; }
 .exp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--blue-dark); text-transform: uppercase; margin-bottom: 5px; }
 .counselor-experience p { font-size: 13px; color: var(--text-body); margin: 0; font-style: italic; }
 .response-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-pale); color: var(--blue-dark); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-top: 14px; }
- 
+
 /* ── FAQ ── */
 .faq-section { background: var(--offwhite); }
 .faq-list { margin-top: 56px; border: 1px solid var(--border-strong); border-radius: 4px; overflow: hidden; }
@@ -415,7 +415,7 @@ section { padding: 96px 0; }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .faq-item.open .faq-a { max-height: 500px; }
 .faq-a-inner { padding: 0 32px 24px; font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; border-left: 3px solid var(--blue-main); margin: 0 32px 24px; }
- 
+
 /* ── FINAL CTA ── */
 /* ⑧ 黒→明るい暖色グリーン系に */
 .final-cta-section { background: linear-gradient(150deg, #5878A8 0%, #9A6878 100%); padding: 110px 0; position: relative; overflow: hidden; }
@@ -430,7 +430,7 @@ section { padding: 96px 0; }
 .final-gifts { display: flex; justify-content: center; gap: 24px; margin-top: 38px; flex-wrap: wrap; }
 .gift-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
 .gift-item::before { content: '✓'; color: var(--yellow); font-weight: 700; }
- 
+
 /* ── FOOTER ── */
 /* ⑧ 真っ黒→深いグリーン系に */
 footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding: 56px 0 28px; }
@@ -442,17 +442,17 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
 .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.06em; transition: color var(--transition); font-weight: 400; }
 .footer-links a:hover { color: rgba(255,255,255,0.85); }
 .footer-bottom { padding-top: 20px; font-size: 11px; color: rgba(255,255,255,0.25); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
- 
+
 /* ── MOBILE VISUAL (hidden desktop) ── */
 .hero-mobile-visual { display: none; }
- 
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   header { padding: 14px 20px; }
   nav a:not(.nav-cta) { display: none; }
- 
+
   .hero { display: block; min-height: auto; }
- 
+
   /* スマホ専用ビジュアルパネル */
   .hero-mobile-visual {
     display: block; position: relative; width: 100%;
@@ -467,8 +467,8 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(60,70,100,0.25) 0%, rgba(100,50,60,0.3) 100%);
   }
- 
- 
+
+
   .hero-mob-horizon {
     position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
     background: linear-gradient(180deg, transparent 0%, rgba(50,40,65,0.72) 100%);
@@ -492,7 +492,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     font-weight: 300; line-height: 1.5; color: #fff; letter-spacing: 0.02em;
   }
   .hero-mob-catch h2 em { font-style: italic; color: var(--teal); }
- 
+
   /* テキストエリア */
   .hero-left { padding: 24px 22px 44px; background: var(--offwhite); }
   .hero-left::after { display: none; }
@@ -502,7 +502,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
   .hero-sub { font-size: 14px; line-height: 1.9; margin-bottom: 20px; max-width: 100%; }
   .hero-badges { margin-bottom: 18px; gap: 6px; }
   .badge { font-size: 11px; padding: 4px 10px; }
- 
+
   .hero-right { display: none; }
   .container { padding: 0 20px; }
   section { padding: 68px 0; }
@@ -543,7 +543,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
 @media (max-width: 480px) {
   .age-grid { grid-template-columns: 1fr; }
 }
- 
+
 /* ── PROGRAM TYPES ── */
 .prog-grid {
   display: grid;
@@ -585,16 +585,141 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
 @media (max-width: 768px) {
   .prog-grid { grid-template-columns: 1fr; }
 }
+
+/* ── COUNSELOR SINGLE LAYOUT ── */
+.counselor-single {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 52px;
+  align-items: start;
+  margin-top: 52px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.counselor-single-photo {
+  background: linear-gradient(160deg, #EAF1F8 0%, #FAF0F2 100%);
+  padding: 44px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 420px;
+  position: relative;
+}
+.counselor-photo-bg {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 24px rgba(123,157,196,0.2);
+  margin-bottom: 20px;
+  background: #f0f0f0;
+}
+.counselor-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.counselor-single-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.counselor-single-icon { font-size: 22px; }
+.counselor-single-name {
+  font-family: var(--font-sans);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+}
+.counselor-single-flags { font-size: 20px; letter-spacing: 4px; margin-bottom: 6px; }
+.counselor-single-role {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  text-align: center;
+}
+.counselor-single-body {
+  padding: 44px 40px 44px 0;
+}
+.counselor-keyword-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.counselor-profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.counselor-profile-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+.cp-icon {
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.counselor-quote {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-style: normal;
+  color: var(--text-body);
+  line-height: 1.9;
+  padding: 18px 20px;
+  background: var(--grad-light, rgba(123,157,196,0.08));
+  border-left: 3px solid var(--blue-main);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 22px;
+}
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .counselor-single {
+    grid-template-columns: 1fr;
+  }
+  .counselor-single-photo {
+    min-height: auto;
+    padding: 36px 24px 28px;
+  }
+  .counselor-photo-bg {
+    width: 160px;
+    height: 160px;
+  }
+  .counselor-single-body {
+    padding: 0 24px 36px;
+  }
+}
 </style>
 </head>
 <body>
- 
+
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
   <p>無料相談｜お子さんに合ったプランを診断します</p>
   <a href="https://s.lmes.jp/landing-qr/2005482900-3O2PGxpd?uLand=Sd2JOz" target="_blank" rel="noopener">📲 LINEで無料相談する</a>
 </div>
- 
+
 <!-- HEADER -->
 <header id="header">
   <a href="#" class="logo">One<span>'</span>s Passport</a>
@@ -606,7 +731,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     <a href="https://s.lmes.jp/landing-qr/2005482900-3O2PGxpd?uLand=Sd2JOz" target="_blank" rel="noopener" class="nav-cta">無料相談する</a>
   </nav>
 </header>
- 
+
 <!-- ① スマホ用ヒーロービジュアルパネル（モバイルのみ表示） -->
 <div class="hero-mobile-visual">
   <div class="hero-mob-bg"></div>
@@ -616,7 +741,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     <h2>子どもの未来は<br><em>「今、見た景色」</em>で<br>決まる。</h2>
   </div>
 </div>
- 
+
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
   <div class="hero-left">
@@ -664,7 +789,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     <div class="hero-right-content"></div>
   </div>
 </section>
- 
+
 <!-- MARQUEE -->
 <div class="marquee-banner">
   <div class="marquee-track">
@@ -678,9 +803,9 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     <span class="marquee-item"><span class="marquee-dot"></span>ママの不安を全部聞いてから、一緒にプランを考えます</span>
   </div>
 </div>
- 
+
 <!-- ⑤ セクション順変更: WHAT → AGE → EMPATHY -->
- 
+
 <!-- ═══════════════ WHAT IS OYAKO RYUGAKU ═══════════════ -->
 <section class="what-section" id="what">
   <div class="container">
@@ -707,7 +832,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
         <p>お子さんが学校に通う時間、ママ自身も語学学校へ。子どもの成長を見守りながら、自分自身の英語力や視野も広がる。親子で成長する、唯一の体験です。</p>
       </div>
     </div>
- 
+
     <!-- ① LINEバナー①（WHATセクション末尾） -->
     <div class="inline-cta reveal">
       <p><strong>「うちの子に合ったプランを知りたい」</strong><br>まずはLINEで気軽に相談してみてください。無料・押し売りなしです。</p>
@@ -722,7 +847,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ AGE GUIDE ═══════════════ -->
 <section class="age-section" id="age">
   <div class="container">
@@ -761,7 +886,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ EMPATHY ═══════════════ -->
 <section class="empathy-section" id="empathy">
   <div class="container">
@@ -803,7 +928,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
         <p class="empathy-answer">→ 相談は完全無料・押し売りなし。他社と比較しながら検討していただくことも大歓迎です</p>
       </div>
     </div>
- 
+
     <!-- ① LINEバナー②（EMPATHYセクション末尾） -->
     <div class="inline-cta reveal">
       <p>不安なことを<strong>全部話してから</strong>決めてください。<br>押し売りなし、現役ママカウンセラーがお答えします。</p>
@@ -818,7 +943,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ REASONS ═══════════════ -->
 <section class="reasons-section" id="reasons">
   <div class="container">
@@ -846,7 +971,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ COUNTRIES ═══════════════ -->
 <section class="countries-section" id="countries">
   <div class="container">
@@ -893,7 +1018,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ CONCERNS ═══════════════ -->
 <section class="concerns-section" id="concerns">
   <div class="container">
@@ -920,7 +1045,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ SUPPORT FLOW ═══════════════ -->
 <section class="flow-section" id="flow">
   <div class="container">
@@ -986,88 +1111,71 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ COUNSELORS ═══════════════ -->
 <section class="counselors-section" id="counselors">
   <div class="container">
-    <div class="section-eyebrow reveal">Your Supporters</div>
-    <h2 class="section-title reveal reveal-delay-1">小さなチームで、<em>とことん寄り添います。</em></h2>
-    <p class="section-lead reveal reveal-delay-2">全員が自身の留学経験者。「日本＆現地のWサポート」で、準備から帰国後まで同じ担当者が責任を持って対応します。</p>
- 
-    <div class="supporters-banner reveal">
-      <div class="supporters-tag-wrap">日本&amp;現地のWサポート</div>
-      <p class="supporters-lead">担当が変わらない・いつでもLINEで話せる<br><strong>二人三脚で走る、"寄り添い続ける"カウンセラー</strong></p>
-    </div>
- 
-    <div class="counselors-grid-3">
- 
-      <!-- Yuna -->
-      <div class="counselor-card reveal">
-        <div class="counselor-keyword keyword-blue">3カ国留学経験</div>
-        <div class="counselor-header">
-          <div class="counselor-avatar avatar-blue">Y</div>
-          <div class="counselor-info">
-            <h3>Yuna</h3>
-            <div class="role">オーストラリア・フィリピン担当</div>
-            <div class="counselor-flags">🇦🇺 🇵🇭</div>
-          </div>
+    <div class="section-eyebrow reveal">カウンセラー紹介</div>
+    <h2 class="section-title reveal reveal-delay-1">あなたの話を、<em>聞く人。</em></h2>
+    <p class="section-lead reveal reveal-delay-2">現役ママカウンセラーが、準備から帰国後まで同じ担当者として責任を持って寄り添います。</p>
+
+    <div class="counselor-single reveal">
+      <!-- 左：写真エリア -->
+      <div class="counselor-single-photo">
+        <div class="counselor-photo-bg">
+          <img src="F4B59D0F-BA42-4A27-AA10-BB0514EB73D6_4_5005_c.jpg"
+               alt="Tomomi" class="counselor-photo-img">
         </div>
-        <div class="counselor-body">
-          <p>フィリピン・オーストラリアなど複数カ国の留学を経験したカウンセラー。親子留学のプランニングを得意とし、お子さんの年齢や目標に合わせた学校選びが強みです。「英語力への不安も、安全への不安も、全部正直に話してください。」</p>
-          <div class="counselor-experience">
-            <div class="exp-label">自身の留学経験</div>
-            <p>フィリピン → オーストラリア（1年半）。帰国後、英語を活かした仕事に転職。</p>
-          </div>
+        <div class="counselor-single-name-wrap">
+          <div class="counselor-single-icon">🐨</div>
+          <h3 class="counselor-single-name">Tomomi</h3>
         </div>
-        <div class="response-badge">✓ 24時間以内にLINE返信します</div>
+        <div class="counselor-single-flags">🇦🇺 🇵🇭</div>
+        <div class="counselor-single-role">オーストラリア・フィリピン担当</div>
       </div>
- 
-      <!-- Mana -->
-      <div class="counselor-card reveal reveal-delay-1">
-        <div class="counselor-keyword keyword-pink">現役ママ</div>
-        <div class="counselor-header">
-          <div class="counselor-avatar avatar-pink">M</div>
-          <div class="counselor-info">
-            <h3>Mana</h3>
-            <div class="role">カナダ・フィリピン担当</div>
-            <div class="counselor-flags">🇨🇦 🇵🇭</div>
+
+      <!-- 右：プロフィール詳細 -->
+      <div class="counselor-single-body">
+        <div class="counselor-keyword-wrap">
+          <span class="counselor-keyword keyword-yellow">学校オタク</span>
+          <span class="counselor-keyword keyword-blue">永住権保持</span>
+          <span class="counselor-keyword keyword-pink">現役ママ</span>
+        </div>
+
+        <div class="counselor-profile-list">
+          <div class="counselor-profile-item">
+            <span class="cp-icon">🇦🇺</span>
+            <span>オーストラリア滞在歴4年（永住権持ち）</span>
+          </div>
+          <div class="counselor-profile-item">
+            <span class="cp-icon">✈️</span>
+            <span>旅行会社勤務経験あり</span>
+          </div>
+          <div class="counselor-profile-item">
+            <span class="cp-icon">🎓</span>
+            <span>留学カウンセラー歴5年</span>
+          </div>
+          <div class="counselor-profile-item">
+            <span class="cp-icon">👩‍👧‍👦</span>
+            <span>小3息子・小5娘と親子留学を経験</span>
           </div>
         </div>
-        <div class="counselor-body">
-          <p>現役ママカウンセラー。カナダ・バンクーバーに2年間滞在し、現在は子育てをしながらカウンセリングを担当しています。「子連れで行く不安、ママとしての気持ち、全部わかります。一緒に考えましょう。」</p>
-          <div class="counselor-experience">
-            <div class="exp-label">自身の留学経験</div>
-            <p>フィリピン（3ヶ月）→ カナダ・バンクーバー（2年）。現在は現役ママとして活躍中。</p>
-          </div>
+
+        <blockquote class="counselor-quote">
+          「パンフレットには載らないリアルな情報を、全部正直にお伝えします。子連れで行く不安も、学校選びの迷いも、ぜんぶ一緒に考えましょう。」
+        </blockquote>
+
+        <div class="counselor-experience">
+          <div class="exp-label">自身の留学・在住経験</div>
+          <p>フィリピン（2ヶ月）→ オーストラリア・パース（長期在住）。オーストラリア永住権保持。自身の子どもたちと親子留学も経験済み。</p>
         </div>
-        <div class="response-badge">✓ 24時間以内にLINE返信します</div>
+
+        <div class="response-badge" style="margin-top: 20px;">✓ 24時間以内にLINE返信します</div>
       </div>
- 
-      <!-- Tomomi -->
-      <div class="counselor-card reveal reveal-delay-2">
-        <div class="counselor-keyword keyword-yellow">学校オタク・永住権保持</div>
-        <div class="counselor-header">
-          <div class="counselor-avatar avatar-teal">T</div>
-          <div class="counselor-info">
-            <h3>Tomomi</h3>
-            <div class="role">オーストラリア・フィリピン担当</div>
-            <div class="counselor-flags">🇦🇺 🇵🇭</div>
-          </div>
-        </div>
-        <div class="counselor-body">
-          <p>オーストラリア永住権を保持し、現地の学校に精通した"学校オタク"カウンセラー。パースを中心に各都市の学校情報を熟知。「パンフレットには載らないリアルな情報を、全部正直にお伝えします。」</p>
-          <div class="counselor-experience">
-            <div class="exp-label">自身の留学・在住経験</div>
-            <p>フィリピン（2ヶ月）→ オーストラリア・パース（長期在住）。オーストラリア永住権保持。</p>
-          </div>
-        </div>
-        <div class="response-badge">✓ 24時間以内にLINE返信します</div>
-      </div>
- 
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ FAQ ═══════════════ -->
 <section class="faq-section" id="faq">
   <div class="container">
@@ -1131,7 +1239,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
         <div class="faq-a"><div class="faq-a-inner">はい、まさにそのために親子留学を選ぶご家族も多いです。「いきなり一人で海外は不安」というお子さんでも、親子一緒に経験を積むことで自信がつき、次のステップとして単身留学にチャレンジできるようになります。親子留学は「子どものためだけでなく、親と子ども両方のためのプログラム」です。</div></div>
       </div>
     </div>
- 
+
     <!-- ① LINEバナー③（FAQセクション末尾） -->
     <div class="inline-cta reveal" style="margin-top: 48px;">
       <p>まだ迷っているなら、<strong>まず話だけでも大丈夫</strong>です。<br>「どんな質問でも」歓迎します。</p>
@@ -1146,7 +1254,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- ═══════════════ FINAL CTA ═══════════════ -->
 <section class="final-cta-section" id="line-cta">
   <div class="container">
@@ -1178,7 +1286,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -1203,7 +1311,7 @@ footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding:
     </div>
   </div>
 </footer>
- 
+
 <script>
 // Scroll animations
 const reveals = document.querySelectorAll('.reveal');
@@ -1211,15 +1319,15 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.07 });
 reveals.forEach(el => observer.observe(el));
- 
+
 // Header scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 60); });
- 
+
 // Sticky CTA
 const stickyCta = document.getElementById('stickyCta');
 window.addEventListener('scroll', () => { stickyCta.classList.toggle('show', window.scrollY > 600); });
- 
+
 // FAQ
 function toggleFaq(el) {
   const item = el.closest('.faq-item');
@@ -1227,7 +1335,7 @@ function toggleFaq(el) {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
- 
+
 // Hero reveal on load
 window.addEventListener('load', () => {
   document.querySelectorAll('.hero .reveal').forEach((el, i) => {
@@ -1237,4 +1345,3 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
- 
