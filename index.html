@@ -6,44 +6,59 @@
 <title>One's Passport | 親子留学エージェント｜子どもの未来を、一緒に広げる</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --teal: #7BBFB5;
-  --teal-dark: #4FA99D;
-  --teal-pale: #E5F4F2;
-  --teal-mid: #C8EAE6;
-  --blue: #4F86A8;
-  --blue-dark: #3A6F90;
-  --blue-pale: #E0EDF5;
-  --pink: #F0A8AD;
-  --pink-dark: #D87880;
-  --pink-pale: #FCF0F1;
-  --yellow: #F2C96D;
-  --yellow-dark: #CFA040;
-  --yellow-pale: #FDF6E3;
+  /* ── PDFトンマナ準拠カラーパレット ── */
+  /* メインブルー（PDF左グラデーション） */
+  --blue-main: #7B9DC4;
+  --blue-dark: #5882A8;
+  --blue-pale: #E8EEF5;
+  --blue-mid: #C5D5E8;
  
-  /* ⑧ 暗い部分を廃止 → 暖かいオフホワイト系に統一 */
-  --offwhite: #F5F3EA;
-  --cream: #FDFCF8;
-  --section-alt: #EEF9F7;   /* teal-pale的なセクション背景 */
-  --warm-white: #FFFEF9;
+  /* アクセントピンク（PDF右グラデーション） */
+  --pink-main: #C9909A;
+  --pink-dark: #B0717D;
+  --pink-pale: #F7EAEC;
+  --pink-mid: #EAC5CA;
  
-  /* テキストカラーを⑨読みやすく改善 */
-  --text-primary: #2C2C2C;
-  --text-body: #4A4A4A;
-  --text-muted: #767676;
-  --border: rgba(44,44,44,0.09);
-  --border-strong: rgba(44,44,44,0.16);
+  /* イエロー（PDFアクセント） */
+  --yellow: #F5D16E;
+  --yellow-dark: #D4A830;
+  --yellow-pale: #FDF6E0;
  
-  --font-serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  /* ティール（サポートカラー） */
+  --teal: #6BAFC5;
+  --teal-dark: #4A92AC;
+  --teal-pale: #E3F2F7;
+  --teal-mid: #B8DDE8;
+ 
+  /* ニュートラル */
+  --offwhite: #F8F6F4;
+  --cream: #FDFCFB;
+  --section-alt: #F2F6FA;
+  --warm-white: #FFFEFE;
+ 
+  /* テキスト */
+  --text-primary: #2A2A2A;
+  --text-body: #484848;
+  --text-muted: #787878;
+  --border: rgba(42,42,42,0.08);
+  --border-strong: rgba(42,42,42,0.15);
+ 
+  /* PDFグラデーション */
+  --grad-main: linear-gradient(135deg, #7B9DC4 0%, #C9909A 100%);
+  --grad-light: linear-gradient(135deg, rgba(123,157,196,0.15) 0%, rgba(201,144,154,0.15) 100%);
+  --grad-section: linear-gradient(135deg, rgba(123,157,196,0.08) 0%, rgba(201,144,154,0.08) 100%);
+ 
   --font-sans: 'Noto Sans JP', sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
  
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { font-family: var(--font-sans); background: var(--cream); color: var(--text-primary); line-height: 1.85; overflow-x: hidden; }
+body { font-family: "Noto Sans JP", sans-serif; background: var(--cream); color: var(--text-primary); line-height: 1.85; overflow-x: hidden; }
  
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -56,7 +71,7 @@ body { font-family: var(--font-sans); background: var(--cream); color: var(--tex
 /* ⑧ 黒→tealグラデに変更 */
 .sticky-cta {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--blue-dark) 100%);
+  background: var(--grad-main);
   padding: 12px 20px;
   display: flex; align-items: center; justify-content: center; gap: 14px;
   transform: translateY(100%); transition: transform 0.4s ease;
@@ -65,7 +80,7 @@ body { font-family: var(--font-sans); background: var(--cream); color: var(--tex
 .sticky-cta.show { transform: translateY(0); }
 .sticky-cta p { color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 300; }
 .sticky-cta a {
-  background: #fff; color: var(--teal-dark); text-decoration: none;
+  background: #fff; color: var(--blue-dark); text-decoration: none;
   padding: 10px 26px; border-radius: 40px; font-size: 13px; font-weight: 700;
   letter-spacing: 0.04em; white-space: nowrap; transition: all var(--transition);
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
@@ -78,33 +93,33 @@ header {
   padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;
   transition: background 0.4s, box-shadow 0.4s;
 }
-header.scrolled { background: rgba(253,252,248,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--border); }
+header.scrolled { background: rgba(248,250,255,0.97); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--border); }
 .logo { font-family: var(--font-serif); font-size: 20px; font-weight: 400; color: var(--text-primary); letter-spacing: 0.05em; text-decoration: none; }
-.logo span { color: var(--teal-dark); }
+.logo span { color: var(--blue-dark); }
 nav { display: flex; align-items: center; gap: 28px; }
 nav a { font-size: 12px; font-weight: 500; color: var(--text-body); text-decoration: none; letter-spacing: 0.08em; transition: color var(--transition); }
 nav a:hover { color: var(--teal-dark); }
-.nav-cta { background: var(--teal) !important; color: #fff !important; padding: 9px 22px; border-radius: 40px; font-size: 12px !important; font-weight: 600 !important; box-shadow: 0 2px 8px rgba(123,191,181,0.4); }
-.nav-cta:hover { background: var(--teal-dark) !important; color: #fff !important; }
+.nav-cta { background: var(--blue-main) !important; color: #fff !important; padding: 9px 22px; border-radius: 40px; font-size: 12px !important; font-weight: 600 !important; box-shadow: 0 2px 8px rgba(123,157,196,0.4); }
+.nav-cta:hover { background: var(--blue-dark) !important; color: #fff !important; }
  
 /* ── HERO (Desktop) ── */
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
 .hero-left { background: var(--offwhite); padding: 140px 60px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
 .hero-left::after { content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 1px; background: var(--border-strong); }
-.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: var(--teal-dark); text-transform: uppercase; margin-bottom: 26px; }
-.hero-eyebrow::before { content: ''; display: block; width: 22px; height: 1.5px; background: var(--teal-dark); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-dark); text-transform: uppercase; margin-bottom: 26px; }
+.hero-eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--grad-main); border-radius: 2px; }
 .hero-h1 {
-  font-family: var(--font-serif);
+  font-family: 'Noto Serif JP', serif;
   font-size: clamp(32px, 3.6vw, 50px);
   font-weight: 300; line-height: 1.6; letter-spacing: 0.02em;
   color: var(--text-primary); margin-bottom: 24px;
 }
 .hero-h1 em { font-style: italic; color: var(--teal-dark); }
-.hero-h1 .kagi { font-style: italic; color: var(--teal-dark); }
+.hero-h1 .kagi { font-style: italic; color: var(--blue-dark); }
 .hero-sub { font-size: 15px; font-weight: 300; color: var(--text-body); line-height: 2.0; max-width: 380px; margin-bottom: 34px; }
 .hero-badges { display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap; }
 .badge { display: inline-flex; align-items: center; gap: 5px; background: #fff; border: 1px solid var(--border-strong); padding: 5px 13px; border-radius: 20px; font-size: 12px; color: var(--text-body); font-weight: 400; }
-.badge-teal { background: var(--teal-pale); border-color: rgba(123,191,181,0.4); color: var(--teal-dark); font-weight: 600; }
+.badge-teal { background: var(--blue-pale); border-color: rgba(123,157,196,0.4); color: var(--blue-dark); font-weight: 600; }
 .hero-cta-group { display: flex; flex-direction: column; gap: 14px; }
  
 /* ── HERO MOBILE: 縦積みフルスクリーン ── */
@@ -130,18 +145,18 @@ nav a:hover { color: var(--teal-dark); }
  
 /* セクション内に埋め込む LINE CTA ブロック */
 .inline-cta {
-  background: linear-gradient(135deg, var(--teal-pale) 0%, #E8F5F0 100%);
-  border: 1.5px solid var(--teal-mid);
-  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue-pale) 0%, var(--pink-pale) 100%);
+  border: 1.5px solid var(--blue-mid);
+  border-radius: 16px;
   padding: 36px 40px;
   text-align: center;
   margin-top: 60px;
 }
 .inline-cta p { font-size: 15px; color: var(--text-body); margin-bottom: 20px; font-weight: 400; line-height: 1.8; }
-.inline-cta p strong { color: var(--teal-dark); font-weight: 700; }
+.inline-cta p strong { color: var(--blue-dark); font-weight: 700; }
 .inline-cta .line-btn { max-width: 360px; margin: 0 auto; display: flex; }
 .inline-cta-note { font-size: 11px; color: var(--text-muted); margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.inline-cta-note span::before { content: '✓ '; color: var(--teal-dark); font-weight: 700; }
+.inline-cta-note span::before { content: '✓ '; color: var(--blue-dark); font-weight: 700; }
  
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
@@ -149,14 +164,14 @@ nav a:hover { color: var(--teal-dark); }
   border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; width: fit-content;
   transition: color var(--transition), border-color var(--transition);
 }
-.btn-secondary:hover { color: var(--teal-dark); border-color: var(--teal-dark); }
-.hero-note { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--text-muted); margin-top: 8px; flex-wrap: wrap; }
+.btn-secondary:hover { color: var(--blue-dark); border-color: var(--blue-dark); }
+.hero-note { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-body); margin-top: 8px; flex-wrap: wrap; font-weight: 500; }
  
 /* HERO RIGHT: ⑧ 黒→グリーン系グラデに */
-.hero-right { position: relative; background: #1a3830; overflow: hidden; display: flex; align-items: flex-end; }
+.hero-right { position: relative; background: linear-gradient(135deg, #6882A8 0%, #A07880 100%); overflow: hidden; display: flex; align-items: flex-end; }
 .hero-bg { position: absolute; inset: 0; background: url('29152438_m.jpg') center center / cover no-repeat; }
  
-.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(20,48,38,0.82) 100%); }
+.hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(60,50,65,0.75) 100%); }
 .hero-illustration { display: none; }
 .hero-right-content { position: relative; z-index: 2; padding: 0 48px 56px; width: 100%; }
  
@@ -170,37 +185,37 @@ nav a:hover { color: var(--teal-dark); }
 /* ── SECTIONS ── */
 section { padding: 96px 0; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-.section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
-.section-eyebrow::before { content: ''; display: block; width: 18px; height: 1.5px; background: var(--teal-dark); }
-.section-title { font-family: var(--font-serif); font-size: clamp(26px, 2.8vw, 40px); font-weight: 300; line-height: 1.5; color: var(--text-primary); margin-bottom: 14px; letter-spacing: 0.02em; }
-.section-title em { font-style: italic; color: var(--teal-dark); }
+.section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::before { content: ''; display: block; width: 18px; height: 2px; background: var(--grad-main); border-radius: 2px; }
+.section-title { font-family: 'Noto Serif JP', serif; font-size: clamp(26px, 2.8vw, 40px); font-weight: 300; line-height: 1.5; color: var(--text-primary); margin-bottom: 14px; letter-spacing: 0.02em; }
+.section-title em { font-style: italic; color: var(--blue-dark); }
 /* ⑨ section-lead を読みやすく */
 .section-lead { font-size: 15px; font-weight: 400; color: var(--text-body); line-height: 2.0; max-width: 560px; }
  
 /* ── WHAT ── */
-.what-section { background: var(--cream); }
+.what-section { background: var(--grad-section); }
 .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; border: 1px solid var(--border-strong); }
 .what-card { background: var(--cream); padding: 42px 34px; border-right: 1px solid var(--border); position: relative; overflow: hidden; transition: background var(--transition); }
 .what-card:last-child { border-right: none; }
-.what-card:hover { background: var(--teal-pale); }
+.what-card:hover { background: var(--blue-pale); }
 .what-icon { font-size: 38px; margin-bottom: 18px; display: block; }
-.what-num { font-family: var(--font-serif); font-size: 72px; font-weight: 300; color: var(--teal); opacity: 0.08; position: absolute; top: -10px; right: 14px; line-height: 1; }
+.what-num { font-family: var(--font-sans); font-size: 72px; font-weight: 900; color: var(--blue-main); opacity: 0.07; position: absolute; top: -10px; right: 14px; line-height: 1; }
 /* ⑨ カード内テキスト強化 */
 .what-card h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--text-primary); line-height: 1.5; margin-bottom: 12px; }
 .what-card p { font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; }
  
 /* ── AGE ── */
-.age-section { background: var(--section-alt); }
+.age-section { background: var(--offwhite); }
 .age-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; }
 .age-card { background: var(--warm-white); border: 1px solid var(--border); padding: 30px 24px; border-radius: 4px; position: relative; overflow: hidden; }
 .age-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; border-radius: 4px 4px 0 0; }
-.age-card.age-0::before { background: var(--pink); }
-.age-card.age-1::before { background: var(--teal); }
-.age-card.age-2::before { background: var(--blue); }
+.age-card.age-0::before { background: var(--pink-main); }
+.age-card.age-1::before { background: var(--blue-main); }
+.age-card.age-2::before { background: var(--teal); }
 .age-card.age-3::before { background: var(--yellow); }
 .age-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
 .age-card.age-0 .age-label { color: var(--pink-dark); }
-.age-card.age-1 .age-label { color: var(--teal-dark); }
+.age-card.age-1 .age-label { color: var(--blue-dark); }
 .age-card.age-2 .age-label { color: var(--blue-dark); }
 .age-card.age-3 .age-label { color: var(--yellow-dark); }
 .age-range { font-family: var(--font-serif); font-size: 28px; font-weight: 300; color: var(--text-primary); line-height: 1.2; margin-bottom: 4px; }
@@ -213,7 +228,7 @@ section { padding: 96px 0; }
 .age-card.age-3 .age-recommend { color: var(--yellow-dark); background: var(--yellow-pale); }
  
 /* ── EMPATHY ── */
-.empathy-section { background: var(--offwhite); }
+.empathy-section { background: var(--grad-section); }
 .empathy-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 52px; }
 .empathy-intro-visual { background: var(--cream); border: 1px solid var(--border-strong); padding: 32px; }
 .empathy-intro-visual .big-emoji { font-size: 52px; display: block; margin-bottom: 14px; }
@@ -223,11 +238,11 @@ section { padding: 96px 0; }
 .empathy-item { padding: 30px 34px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background var(--transition); position: relative; overflow: hidden; }
 .empathy-item:nth-child(2n) { border-right: none; }
 .empathy-item:nth-last-child(-n+2) { border-bottom: none; }
-.empathy-item:hover { background: rgba(123,191,181,0.06); }
-.empathy-item::before { content: '"'; font-family: var(--font-serif); font-size: 56px; color: var(--teal); opacity: 0.15; position: absolute; top: 8px; left: 22px; line-height: 1; }
+.empathy-item:hover { background: rgba(123,157,196,0.06); }
+.empathy-item::before { content: '"'; font-family: var(--font-sans); font-size: 56px; color: var(--blue-main); opacity: 0.15; position: absolute; top: 8px; left: 22px; line-height: 1; }
 /* ⑨ empathy テキスト強化 */
 .empathy-item p { font-size: 14px; font-weight: 500; color: var(--text-primary); line-height: 1.85; padding-left: 6px; position: relative; z-index: 1; }
-.empathy-answer { font-size: 13px !important; color: var(--teal-dark) !important; font-weight: 600 !important; margin-top: 10px !important; }
+.empathy-answer { font-size: 13px !important; color: var(--blue-dark) !important; font-weight: 600 !important; margin-top: 10px !important; }
  
 /* ── REASONS ── */
 .reasons-section { background: var(--cream); }
@@ -235,16 +250,16 @@ section { padding: 96px 0; }
 .reason-card { background: var(--cream); padding: 44px 36px; border-right: 1px solid var(--border); position: relative; overflow: hidden; transition: background var(--transition); }
 .reason-card:last-child { border-right: none; }
 .reason-card:hover { background: var(--offwhite); }
-.reason-num { font-family: var(--font-serif); font-size: 80px; font-weight: 300; color: var(--teal); opacity: 0.08; position: absolute; top: -10px; right: 16px; line-height: 1; }
+.reason-num { font-family: var(--font-sans); font-size: 80px; font-weight: 900; color: var(--blue-main); opacity: 0.07; position: absolute; top: -10px; right: 16px; line-height: 1; }
 .reason-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 22px; }
-.reason-icon-teal { background: var(--teal-pale); }
-.reason-icon-blue { background: var(--blue-pale); }
+.reason-icon-teal { background: var(--blue-pale); }
+.reason-icon-blue { background: var(--pink-pale); }
 .reason-icon-yellow { background: var(--yellow-pale); }
 .reason-card h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--text-primary); line-height: 1.5; margin-bottom: 12px; }
 .reason-card p { font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; }
  
 /* ── COUNTRIES ── */
-.countries-section { background: var(--section-alt); }
+.countries-section { background: var(--offwhite); }
 .countries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; border: 1px solid var(--border-strong); }
 .country-card { padding: 42px 36px; border-right: 1px solid var(--border); overflow: hidden; }
 .country-card:last-child { border-right: none; }
@@ -255,7 +270,7 @@ section { padding: 96px 0; }
 .country-name { font-family: var(--font-serif); font-size: 24px; font-weight: 300; color: var(--text-primary); margin-bottom: 3px; }
 .country-name-jp { font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; margin-bottom: 14px; font-weight: 400; }
 .oyako-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 3px; margin-bottom: 14px; }
-.badge-aus { color: var(--teal-dark); background: var(--teal-pale); }
+.badge-aus { color: var(--blue-dark); background: var(--blue-pale); }
 .badge-can { color: var(--blue-dark); background: var(--blue-pale); }
 .badge-phl { color: var(--yellow-dark); background: var(--yellow-pale); }
 .country-for { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px; }
@@ -270,76 +285,158 @@ section { padding: 96px 0; }
 .concern-item:nth-child(2n) { border-right: none; }
 .concern-item:nth-last-child(-n+2) { border-bottom: none; }
 .concern-q { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.6; margin-bottom: 14px; display: flex; gap: 10px; align-items: flex-start; }
-.q-icon { width: 22px; height: 22px; background: var(--teal-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--teal-dark); flex-shrink: 0; margin-top: 2px; }
-.concern-a { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; padding-left: 18px; border-left: 2px solid var(--teal-mid); }
-.concern-a strong { color: var(--teal-dark); font-weight: 700; }
+.q-icon { width: 22px; height: 22px; background: var(--blue-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0; margin-top: 2px; }
+.concern-a { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; padding-left: 18px; border-left: 2px solid var(--blue-mid); }
+.concern-a strong { color: var(--blue-dark); font-weight: 700; }
  
 /* ── FLOW ── */
-.flow-section { background: var(--offwhite); }
+.flow-section { background: var(--grad-section); }
 .flow-timeline { position: relative; margin-top: 56px; }
 .flow-timeline::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-strong); transform: translateX(-50%); }
 .flow-step { display: grid; grid-template-columns: 1fr 60px 1fr; align-items: start; }
 .flow-step-left { padding: 0 46px 46px 0; text-align: right; }
 .flow-step-right { padding: 0 0 46px 46px; }
 .flow-step-center { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
-.flow-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 3px solid var(--offwhite); box-shadow: 0 0 0 1px var(--teal); z-index: 1; position: relative; }
-.flow-phase { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 8px; }
+.flow-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue-main); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--blue-main); z-index: 1; position: relative; }
+.flow-phase { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 8px; }
 .flow-step-content h4 { font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--text-primary); margin-bottom: 8px; }
 .flow-step-content p { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; }
  
+/* ── SUPPORTERS BANNER ── */
+.supporters-banner {
+  background: var(--grad-main);
+  border-radius: 12px;
+  padding: 22px 32px;
+  margin: 32px 0 48px;
+}
+.supporters-banner-inner { text-align: center; }
+.supporters-tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+}
+.supporters-lead { font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.7; }
+.supporters-lead strong { color: #fff; }
+ 
+/* ── COUNSELORS 3列 ── */
+.counselors-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.counselor-keyword {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 14px;
+}
+.keyword-blue { background: var(--blue-pale); color: var(--blue-dark); }
+.keyword-pink { background: var(--pink-pale); color: var(--pink-dark); }
+.keyword-yellow { background: var(--yellow-pale); color: var(--yellow-dark); }
+.avatar-pink { background: var(--pink-main, #C9909A) !important; }
+@media (max-width: 768px) {
+  .counselors-grid-3 { grid-template-columns: 1fr; }
+}
+ 
+ 
+/* ── SUPPORTERS BANNER ── */
+.supporters-banner {
+  background: var(--grad-main);
+  border-radius: 14px;
+  padding: 24px 36px;
+  margin: 32px 0 44px;
+  text-align: center;
+}
+.supporters-tag-wrap {
+  display: inline-block;
+  background: rgba(255,255,255,0.28);
+  color: #fff;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 5px 16px; border-radius: 20px; margin-bottom: 10px;
+}
+.supporters-lead { font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.75; }
+.supporters-lead strong { color: #fff; font-weight: 700; }
+ 
+/* ── COUNSELORS 3列グリッド ── */
+.counselors-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 0;
+}
+.counselor-keyword {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 14px;
+}
+.keyword-blue { background: var(--blue-pale); color: var(--blue-dark); }
+.keyword-pink { background: var(--pink-pale); color: var(--pink-dark); }
+.keyword-yellow { background: var(--yellow-pale); color: var(--yellow-dark); }
+.avatar-pink { background: linear-gradient(135deg, var(--pink-main, #C9909A) 0%, var(--pink-dark, #B0717D) 100%) !important; }
+.avatar-blue { background: linear-gradient(135deg, var(--blue-main, #7B9DC4) 0%, var(--blue-dark, #5882A8) 100%) !important; }
+@media (max-width: 900px) {
+  .counselors-grid-3 { grid-template-columns: 1fr; }
+}
 /* ── COUNSELORS ── */
-.counselors-section { background: var(--cream); }
+.counselors-section { background: var(--grad-section); }
 .counselors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 56px; }
 .counselor-card { background: var(--offwhite); border: 1px solid var(--border); padding: 36px; border-radius: 4px; }
 .counselor-header { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 20px; }
 .counselor-avatar { width: 66px; height: 66px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 22px; font-weight: 400; color: #fff; flex-shrink: 0; }
-.avatar-teal { background: var(--teal); }
-.avatar-blue { background: var(--blue); }
+.avatar-teal { background: var(--blue-main); }
+.avatar-blue { background: var(--pink-main); }
 .counselor-info h3 { font-family: var(--font-serif); font-size: 20px; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
 .counselor-info .role { font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; font-weight: 400; }
 .counselor-flags { display: flex; gap: 4px; margin-top: 7px; font-size: 16px; }
 .counselor-body p { font-size: 14px; color: var(--text-body); line-height: 1.9; font-weight: 400; margin-bottom: 14px; }
 .counselor-experience { background: var(--cream); border: 1px solid var(--border); padding: 14px 18px; margin-top: 14px; border-radius: 3px; }
-.exp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-dark); text-transform: uppercase; margin-bottom: 5px; }
+.exp-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--blue-dark); text-transform: uppercase; margin-bottom: 5px; }
 .counselor-experience p { font-size: 13px; color: var(--text-body); margin: 0; font-style: italic; }
-.response-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--teal-pale); color: var(--teal-dark); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-top: 14px; }
+.response-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--blue-pale); color: var(--blue-dark); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-top: 14px; }
  
 /* ── FAQ ── */
-.faq-section { background: var(--section-alt); }
+.faq-section { background: var(--offwhite); }
 .faq-list { margin-top: 56px; border: 1px solid var(--border-strong); border-radius: 4px; overflow: hidden; }
 .faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
 .faq-item:last-child { border-bottom: none; }
 .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; cursor: pointer; transition: background var(--transition); gap: 20px; }
-.faq-q:hover { background: rgba(123,191,181,0.06); }
+.faq-q:hover { background: rgba(123,157,196,0.06); }
 /* ⑨ FAQ question text 強化 */
 .faq-q-text { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.5; }
-.faq-icon { width: 24px; height: 24px; border: 1.5px solid var(--teal-mid); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--teal-dark); flex-shrink: 0; transition: transform var(--transition); }
+.faq-icon { width: 24px; height: 24px; border: 1.5px solid var(--blue-mid); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--blue-dark); flex-shrink: 0; transition: transform var(--transition); }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
 .faq-item.open .faq-a { max-height: 500px; }
-.faq-a-inner { padding: 0 32px 24px; font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; border-left: 3px solid var(--teal); margin: 0 32px 24px; }
+.faq-a-inner { padding: 0 32px 24px; font-size: 14px; color: var(--text-body); line-height: 1.95; font-weight: 400; border-left: 3px solid var(--blue-main); margin: 0 32px 24px; }
  
 /* ── FINAL CTA ── */
 /* ⑧ 黒→明るい暖色グリーン系に */
-.final-cta-section { background: linear-gradient(150deg, #1e4a3e 0%, #163528 100%); padding: 110px 0; position: relative; overflow: hidden; }
-.final-cta-section::before { content: ''; position: absolute; top: -180px; right: -180px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(123,191,181,0.18) 0%, transparent 70%); pointer-events: none; }
-.final-cta-section::after { content: ''; position: absolute; bottom: -150px; left: -150px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(79,134,168,0.12) 0%, transparent 70%); pointer-events: none; }
+.final-cta-section { background: linear-gradient(150deg, #5878A8 0%, #9A6878 100%); padding: 110px 0; position: relative; overflow: hidden; }
+.final-cta-section::before { content: ''; position: absolute; top: -180px; right: -180px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(123,157,196,0.2) 0%, transparent 70%); pointer-events: none; }
+.final-cta-section::after { content: ''; position: absolute; bottom: -150px; left: -150px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(201,144,154,0.18) 0%, transparent 70%); pointer-events: none; }
 .final-cta-inner { text-align: center; position: relative; z-index: 1; }
-.final-cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 22px; }
+.final-cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: 22px; }
 .final-cta-title { font-family: var(--font-serif); font-size: clamp(30px, 3.8vw, 48px); font-weight: 300; color: #fff; line-height: 1.5; margin-bottom: 18px; letter-spacing: 0.02em; }
-.final-cta-title em { font-style: italic; color: var(--teal); }
+.final-cta-title em { font-style: normal; color: var(--yellow); font-weight: 700; }
 .final-cta-sub { font-size: 16px; color: rgba(255,255,255,0.7); font-weight: 300; line-height: 1.9; margin-bottom: 46px; max-width: 480px; margin-left: auto; margin-right: auto; }
 .final-cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
 .final-gifts { display: flex; justify-content: center; gap: 24px; margin-top: 38px; flex-wrap: wrap; }
 .gift-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.55); }
-.gift-item::before { content: '✓'; color: var(--teal); font-weight: 700; }
+.gift-item::before { content: '✓'; color: var(--yellow); font-weight: 700; }
  
 /* ── FOOTER ── */
 /* ⑧ 真っ黒→深いグリーン系に */
-footer { background: #122820; padding: 56px 0 28px; }
+footer { background: linear-gradient(135deg, #3A5278 0%, #7A4850 100%); padding: 56px 0 28px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); gap: 40px; flex-wrap: wrap; }
 .footer-logo { font-family: var(--font-serif); font-size: 21px; font-weight: 300; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; margin-bottom: 10px; }
-.footer-logo span { color: var(--teal); }
+.footer-logo span { color: var(--yellow); }
 .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.8; max-width: 260px; font-weight: 300; }
 .footer-links { display: flex; gap: 30px; flex-wrap: wrap; }
 .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; letter-spacing: 0.06em; transition: color var(--transition); font-weight: 400; }
@@ -368,13 +465,13 @@ footer { background: #122820; padding: 56px 0 28px; }
   .hero-mob-bg::after {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(160deg, rgba(20,58,46,0.25) 0%, rgba(10,30,22,0.35) 100%);
+    background: linear-gradient(135deg, rgba(60,70,100,0.25) 0%, rgba(100,50,60,0.3) 100%);
   }
  
  
   .hero-mob-horizon {
     position: absolute; bottom: 0; left: 0; right: 0; height: 55%;
-    background: linear-gradient(180deg, transparent 0%, rgba(16,42,30,0.75) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(50,40,65,0.72) 100%);
   }
   .hero-mob-emoji { display: none; }
   .hero-mob-catch {
@@ -446,6 +543,48 @@ footer { background: #122820; padding: 56px 0 28px; }
 @media (max-width: 480px) {
   .age-grid { grid-template-columns: 1fr; }
 }
+ 
+/* ── PROGRAM TYPES ── */
+.prog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.prog-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 18px;
+  transition: background var(--transition);
+}
+.prog-item:hover { background: var(--teal-pale); }
+.prog-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 38px; height: 38px;
+  background: var(--blue-pale);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.prog-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.prog-desc {
+  font-size: 12px;
+  color: var(--text-body);
+  line-height: 1.75;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .prog-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -491,10 +630,10 @@ footer { background: #122820; padding: 56px 0 28px; }
       決まる。
     </h1>
     <p class="hero-sub reveal reveal-delay-2">
-      言葉の壁を越えた先に、自信がある。<br>
-      多様な文化に触れた先に、視野がある。<br>
-      親子で踏み出したその一歩が、<br>
-      お子さんの選択肢を一生、広げていきます。
+      親子留学は、子どものためだけでなく<br>
+      <strong style="color:var(--teal-dark);">「親と子ども、両方のためのプログラム」</strong>です。<br><br>
+      ママ自身が「もう一度学びたい」「叶えられなかった夢を子どもと一緒に」——<br>
+      そんな想いも、ここで叶えられます。
     </p>
     <div class="hero-badges reveal reveal-delay-3">
       <div class="badge badge-teal">👩‍👧 親子留学専門</div>
@@ -546,8 +685,8 @@ footer { background: #122820; padding: 56px 0 28px; }
 <section class="what-section" id="what">
   <div class="container">
     <div class="section-eyebrow reveal">親子留学でできること</div>
-    <h2 class="section-title reveal reveal-delay-1">子どもが<em>変わる瞬間</em>を、<br>隣で見られる。</h2>
-    <p class="section-lead reveal reveal-delay-2">親子留学は、お子さんと一緒に海外に滞在しながら英語を学ぶスタイルです。英語力だけでなく、お子さんの人間としての成長を間近に感じられる体験です。</p>
+    <h2 class="section-title reveal reveal-delay-1">親子留学は、<em>子どもと親、両方のため</em>のプログラムです。</h2>
+    <p class="section-lead reveal reveal-delay-2">「子どもに英語を身につけさせたい」だけじゃない。「自分ももう一度学びたい」「叶えられなかった夢を子どもと一緒に実現したい」——そんなお母さんの想いにも、親子留学は応えます。</p>
     <div class="what-grid">
       <div class="what-card reveal">
         <div class="what-num">01</div>
@@ -593,10 +732,10 @@ footer { background: #122820; padding: 56px 0 28px; }
     <div class="age-grid">
       <div class="age-card age-0 reveal">
         <div class="age-label">幼児期</div>
-        <div class="age-range">3〜5歳</div>
-        <div class="age-sub">英語を「母国語感覚」で吸収する時期</div>
-        <p>恐れも先入観もなく、音として英語を吸収できる最良の年齢。遊びの中で自然に英語が身につきます。短期滞在でも驚くほどの吸収力を発揮します。</p>
-        <div class="age-recommend">🇵🇭 フィリピン短期留学が最適</div>
+        <div class="age-range">0〜6歳</div>
+        <div class="age-sub">Child Care＋ママの語学学校で同時進行</div>
+        <p>お子さんはChild Care（現地保育園）へ、ママは語学学校へ。別々の施設でそれぞれが英語環境に入ります。現地での記憶は残りにくくても、<strong>親子で海外に踏み出した経験は家族の宝物</strong>になります。</p>
+        <div class="age-recommend">🇵🇭 フィリピン・マクタン島エリアが特におすすめ</div>
       </div>
       <div class="age-card age-1 reveal reveal-delay-1">
         <div class="age-label">小学低学年</div>
@@ -661,7 +800,7 @@ footer { background: #122820; padding: 56px 0 28px; }
       </div>
       <div class="empathy-item reveal reveal-delay-1">
         <p>エージェントに相談したら、高いプランを押し売りされそうで怖い</p>
-        <p class="empathy-answer">→ 相談は完全無料・押し売りなし。ご予算に合ったプランを正直にご提案します</p>
+        <p class="empathy-answer">→ 相談は完全無料・押し売りなし。他社と比較しながら検討していただくことも大歓迎です</p>
       </div>
     </div>
  
@@ -685,24 +824,24 @@ footer { background: #122820; padding: 56px 0 28px; }
   <div class="container">
     <div class="section-eyebrow reveal">選ばれる理由</div>
     <h2 class="section-title reveal reveal-delay-1">One's Passportが<em>選ばれる</em><br>3つの理由</h2>
-    <div class="reasons-grid">
+    <div class="reasons-grid" style="grid-template-columns: repeat(3,1fr);">
       <div class="reason-card reveal">
         <div class="reason-num">01</div>
         <div class="reason-icon reason-icon-teal">👩</div>
-        <h3>現役ママ目線の<br>女性専任カウンセラー</h3>
-        <p>担当は全員、自身も海外留学を経験した女性カウンセラーです。英語力・安全面・費用・子どもへの影響……ママとしての視点で一緒に考えます。言いにくいことも気兼ねなく話してください。</p>
+        <h3>現役ママカウンセラーが<br>一貫して担当</h3>
+        <p>準備→渡航→帰国後まで、<strong>担当者が変わらない</strong>専任制です。自身も留学を経験した女性カウンセラーだから、ママの不安の「本当のところ」がわかります。夜間・週末のカウンセリングにも対応。</p>
       </div>
       <div class="reason-card reveal reveal-delay-1">
         <div class="reason-num">02</div>
-        <div class="reason-icon reason-icon-blue">🛡️</div>
-        <h3>親子留学に特化した<br>安全なプランのみ</h3>
-        <p>子どもを連れていける安全なエリア・学校・ホームステイ先を厳選してご案内。「パンフレットと実際が違った」を防ぐため、学校の内部情報を包み隠さずお伝えします。</p>
+        <div class="reason-icon reason-icon-blue">📓</div>
+        <h3>一人ひとりに<br>専用留学準備ノート</h3>
+        <p>手続き・書類・チェックシートを一元管理した<strong>専用のNotionノート</strong>を作成。進捗・お見積もり・ビザ取得・航空券・保険加入……すべてスマホでいつでも確認できます。</p>
       </div>
       <div class="reason-card reveal reveal-delay-2">
         <div class="reason-num">03</div>
-        <div class="reason-icon reason-icon-yellow">✈️</div>
-        <h3>渡航後も<br>ずっと一緒にサポート</h3>
-        <p>渡航中のトラブル対応から帰国後の英語継続サポートまで、担当カウンセラーが一貫して寄り添います。「終わり」のない、安心できるサポートです。</p>
+        <div class="reason-icon reason-icon-yellow">🗺️</div>
+        <h3>王道だけでなく<br>穴場都市も正直に案内</h3>
+        <p>AUS8都市・CAN7都市の中から、<strong>各国専門カウンセラーが実際に滞在・就学経験のある都市</strong>を正直にご案内。お子さんに合う環境を、パンフレットには載らない情報含めてお伝えします。</p>
       </div>
     </div>
   </div>
@@ -721,31 +860,34 @@ footer { background: #122820; padding: 56px 0 28px; }
         <div class="country-name-jp">オーストラリア</div>
         <div class="oyako-badge badge-aus">👩‍👧 親子留学人気No.1</div>
         <div class="country-for">こんな親子に向いている</div>
-        <p class="country-desc">自然の中でのびのびと暮らしながら英語を学びたい親子に。日本との時差が少なく連絡しやすいのも安心ポイント。子どもが現地の学校に体験入学できるプログラムもあります。</p>
+        <p class="country-desc">自然の中でのびのびと暮らしながら英語を学びたい親子に。日本との時差が小さく家族に連絡しやすいのも安心ポイント。子どもが現地の学校に体験入学できるプログラムも人気です。パース・ブリスベン・ゴールドコーストなど<strong>8都市から</strong>お子さんに合う環境を選べます。</p>
         <div class="country-tags">
-          <span class="ctag">語学留学</span><span class="ctag">現地学校体験</span><span class="ctag">自然豊か</span><span class="ctag">治安良好</span>
+          <span class="ctag">語学留学</span><span class="ctag">現地学校体験</span><span class="ctag">8都市対応</span><span class="ctag">自然豊か</span><span class="ctag">時差が少ない</span>
         </div>
       </div>
       <div class="country-card can reveal reveal-delay-1">
         <span class="country-flag-big">🇨🇦</span>
         <div class="country-name">Canada</div>
         <div class="country-name-jp">カナダ</div>
-        <div class="oyako-badge badge-can">🌍 多様性を体験させたい親子へ</div>
+        <div class="oyako-badge badge-can">🌍 多様な価値観に触れさせたい親子へ</div>
         <div class="country-for">こんな親子に向いている</div>
-        <p class="country-desc">多様な国籍の人たちと交流しながら英語を学びたい親子に。日本人が少ない環境で自然と英語漬けの日々を送れます。子どもの「世界観」を広げるのに最も適した国と言われています。</p>
+        <p class="country-desc">多様な国籍の人たちと交流しながら英語を学びたい親子に。バンクーバー・ビクトリア・ケロウナなど<strong>7都市から</strong>環境を選べます。湖と山に囲まれた穴場リゾート都市や、「赤毛のアン」の舞台・プリンスエドワード島など個性豊かな選択肢があります。</p>
         <div class="country-tags">
-          <span class="ctag">語学留学</span><span class="ctag">多様性</span><span class="ctag">治安良好</span><span class="ctag">自然豊か</span>
+          <span class="ctag">語学留学</span><span class="ctag">7都市対応</span><span class="ctag">多様性</span><span class="ctag">穴場都市も案内</span>
         </div>
       </div>
       <div class="country-card phl reveal reveal-delay-2">
         <span class="country-flag-big">🇵🇭</span>
         <div class="country-name">Philippines</div>
         <div class="country-name-jp">フィリピン</div>
-        <div class="oyako-badge badge-phl">💰 コスパ重視の親子はまずここから</div>
+        <div class="oyako-badge badge-phl">💰 まず試したい・コスパ重視の親子へ</div>
         <div class="country-for">こんな親子に向いている</div>
-        <p class="country-desc">費用を抑えてしっかり英語力を上げたい親子に。マンツーマン授業が基本で、子どもも大人も確実に伸びます。「まず短期で試してみたい」という入口としても最適です。</p>
+        <p class="country-desc">費用を抑えてしっかり英語力を上げたい親子に。マンツーマン授業が基本で子どもも大人も確実に伸びます。広い敷地内に学校・学生寮・プール・食堂・ジムが揃い、<strong>スクールナース常駐・放課後アクティビティ毎日開催</strong>で小さなお子さんも安心。</p>
+        <div style="background: var(--yellow-pale); border: 1px solid rgba(207,160,64,0.25); border-radius:6px; padding: 10px 14px; margin: 12px 0; font-size:12px; color: var(--yellow-dark); font-weight:500;">
+          🏝️ 小さなお子さん連れには<strong>マクタン島エリア</strong>が特におすすめ。海が見えるリゾート環境・空港から近く・治安も安心。
+        </div>
         <div class="country-tags">
-          <span class="ctag">語学留学</span><span class="ctag">マンツーマン</span><span class="ctag">コスパ最高</span><span class="ctag">短期OK</span>
+          <span class="ctag">マンツーマン授業</span><span class="ctag">スクールナース常駐</span><span class="ctag">プール・ジム完備</span><span class="ctag">短期1ヶ月〜OK</span><span class="ctag">コスパ最高</span>
         </div>
       </div>
     </div>
@@ -790,8 +932,8 @@ footer { background: #122820; padding: 56px 0 28px; }
         <div class="flow-step-left">
           <div class="flow-step-content reveal">
             <div class="flow-phase">Step 01</div>
-            <h4>無料カウンセリング</h4>
-            <p>LINEまたはZoomで、お子さんの年齢・英語力・ご予算・不安を丁寧に聞かせてください。押し売りは一切しません。</p>
+            <h4>無料カウンセリング（回数無制限）</h4>
+            <p>LINEまたはZoomで、お子さんの年齢・英語力・ご予算・不安を丁寧に聞かせてください。押し売りは一切しません。渡航前・渡航後を通じて何回でも無料です。</p>
           </div>
         </div>
         <div class="flow-step-center"><div class="flow-dot"></div></div>
@@ -813,7 +955,7 @@ footer { background: #122820; padding: 56px 0 28px; }
           <div class="flow-step-content reveal">
             <div class="flow-phase">Step 03</div>
             <h4>渡航準備を全てサポート</h4>
-            <p>ビザ・学校出願・保険・航空券・ホームステイ手配まで。お子さん連れならではの手続きも全て対応します。</p>
+            <p>ビザ・学校出願・保険・航空券・ホームステイ手配まで全て対応。<strong>一人ひとり専用の留学準備ノート（Notion）</strong>を作成し、手続き進捗・チェックシートをスマホでいつでも確認できます。また「どんな国へ行くの？」<strong>親子で楽しめる事前学習ワーク</strong>もプレゼントします。</p>
           </div>
         </div>
         <div class="flow-step-center"><div class="flow-dot"></div></div>
@@ -848,13 +990,22 @@ footer { background: #122820; padding: 56px 0 28px; }
 <!-- ═══════════════ COUNSELORS ═══════════════ -->
 <section class="counselors-section" id="counselors">
   <div class="container">
-    <div class="section-eyebrow reveal">担当カウンセラー</div>
-    <h2 class="section-title reveal reveal-delay-1">あなたの話を、<em>聞く人たち。</em></h2>
-    <p class="section-lead reveal reveal-delay-2">全員が自身の留学経験者。だから、ママの不安の「本当のところ」がわかります。</p>
-    <div class="counselors-grid">
+    <div class="section-eyebrow reveal">Your Supporters</div>
+    <h2 class="section-title reveal reveal-delay-1">小さなチームで、<em>とことん寄り添います。</em></h2>
+    <p class="section-lead reveal reveal-delay-2">全員が自身の留学経験者。「日本＆現地のWサポート」で、準備から帰国後まで同じ担当者が責任を持って対応します。</p>
+ 
+    <div class="supporters-banner reveal">
+      <div class="supporters-tag-wrap">日本&amp;現地のWサポート</div>
+      <p class="supporters-lead">担当が変わらない・いつでもLINEで話せる<br><strong>二人三脚で走る、"寄り添い続ける"カウンセラー</strong></p>
+    </div>
+ 
+    <div class="counselors-grid-3">
+ 
+      <!-- Yuna -->
       <div class="counselor-card reveal">
+        <div class="counselor-keyword keyword-blue">3カ国留学経験</div>
         <div class="counselor-header">
-          <div class="counselor-avatar avatar-teal">Y</div>
+          <div class="counselor-avatar avatar-blue">Y</div>
           <div class="counselor-info">
             <h3>Yuna</h3>
             <div class="role">オーストラリア・フィリピン担当</div>
@@ -862,17 +1013,20 @@ footer { background: #122820; padding: 56px 0 28px; }
           </div>
         </div>
         <div class="counselor-body">
-          <p>オーストラリアに1年半滞在した経験を持つカウンセラー。「英語力への不安も、安全への不安も、全部正直に話してください。私も同じ不安を抱えて飛び出した一人です。」</p>
+          <p>フィリピン・オーストラリアなど複数カ国の留学を経験したカウンセラー。親子留学のプランニングを得意とし、お子さんの年齢や目標に合わせた学校選びが強みです。「英語力への不安も、安全への不安も、全部正直に話してください。」</p>
           <div class="counselor-experience">
             <div class="exp-label">自身の留学経験</div>
-            <p>フィリピン（2ヶ月）→ オーストラリア（1年半）。帰国後、英語を活かした仕事に転職。</p>
+            <p>フィリピン → オーストラリア（1年半）。帰国後、英語を活かした仕事に転職。</p>
           </div>
         </div>
         <div class="response-badge">✓ 24時間以内にLINE返信します</div>
       </div>
+ 
+      <!-- Mana -->
       <div class="counselor-card reveal reveal-delay-1">
+        <div class="counselor-keyword keyword-pink">現役ママ</div>
         <div class="counselor-header">
-          <div class="counselor-avatar avatar-blue">M</div>
+          <div class="counselor-avatar avatar-pink">M</div>
           <div class="counselor-info">
             <h3>Mana</h3>
             <div class="role">カナダ・フィリピン担当</div>
@@ -880,14 +1034,36 @@ footer { background: #122820; padding: 56px 0 28px; }
           </div>
         </div>
         <div class="counselor-body">
-          <p>カナダ・バンクーバーに2年間滞在。費用の計画や渡航準備のサポートが得意です。「何から始めればいいかわからない状態から、一緒に整理していきましょう。」</p>
+          <p>現役ママカウンセラー。カナダ・バンクーバーに2年間滞在し、現在は子育てをしながらカウンセリングを担当しています。「子連れで行く不安、ママとしての気持ち、全部わかります。一緒に考えましょう。」</p>
           <div class="counselor-experience">
             <div class="exp-label">自身の留学経験</div>
-            <p>フィリピン（3ヶ月）→ カナダ（2年）。帰国後、外資系企業に転職。</p>
+            <p>フィリピン（3ヶ月）→ カナダ・バンクーバー（2年）。現在は現役ママとして活躍中。</p>
           </div>
         </div>
         <div class="response-badge">✓ 24時間以内にLINE返信します</div>
       </div>
+ 
+      <!-- Tomomi -->
+      <div class="counselor-card reveal reveal-delay-2">
+        <div class="counselor-keyword keyword-yellow">学校オタク・永住権保持</div>
+        <div class="counselor-header">
+          <div class="counselor-avatar avatar-teal">T</div>
+          <div class="counselor-info">
+            <h3>Tomomi</h3>
+            <div class="role">オーストラリア・フィリピン担当</div>
+            <div class="counselor-flags">🇦🇺 🇵🇭</div>
+          </div>
+        </div>
+        <div class="counselor-body">
+          <p>オーストラリア永住権を保持し、現地の学校に精通した"学校オタク"カウンセラー。パースを中心に各都市の学校情報を熟知。「パンフレットには載らないリアルな情報を、全部正直にお伝えします。」</p>
+          <div class="counselor-experience">
+            <div class="exp-label">自身の留学・在住経験</div>
+            <p>フィリピン（2ヶ月）→ オーストラリア・パース（長期在住）。オーストラリア永住権保持。</p>
+          </div>
+        </div>
+        <div class="response-badge">✓ 24時間以内にLINE返信します</div>
+      </div>
+ 
     </div>
   </div>
 </section>
@@ -938,7 +1114,21 @@ footer { background: #122820; padding: 56px 0 28px; }
           <span class="faq-q-text">相談は本当に無料ですか？後から費用を請求されませんか？</span>
           <span class="faq-icon">+</span>
         </div>
-        <div class="faq-a"><div class="faq-a-inner">相談・カウンセリング・プラン提案・学校手配・ビザサポートまで、エージェントとしての手数料は完全無料です。費用がかかるのは「語学学校の学費・航空券・保険・生活費」など、学校に直接申し込む場合と全く同じ費用のみです。隠れコストがある場合も事前に全て開示します。</div></div>
+        <div class="faq-a"><div class="faq-a-inner">相談・カウンセリング・プラン提案・学校手配・ビザサポートまで、エージェントとしての手数料は完全無料です。費用がかかるのは「語学学校の学費・航空券・保険・生活費」など、学校に直接申し込む場合と全く同じ費用のみです。隠れコストがある場合も事前に全て開示します。<br><br>※一部の特殊なプラン（急ぎ手配・8週間未満の短期・提携外学校など）は別途サポート料が発生する場合があります。詳しくはカウンセラーにご確認ください。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">専用の留学準備ノートとは何ですか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">お申し込みいただいた方全員に、一人ひとり専用の「留学準備ノート（Notion）」を作成してお渡しします。学校関係の書類・入国に必要な書類・手続きの進捗（お見積もり・ビザ・航空券・保険・携帯通信環境）・持ち物チェックシートをひとつにまとめたオンラインノートです。スマホ・PCでいつでも閲覧できるので、「あの書類どこだっけ？」がなくなります。</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">子どもが「単身留学」に不安なのですが、親子留学は足がかりになりますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">はい、まさにそのために親子留学を選ぶご家族も多いです。「いきなり一人で海外は不安」というお子さんでも、親子一緒に経験を積むことで自信がつき、次のステップとして単身留学にチャレンジできるようになります。親子留学は「子どものためだけでなく、親と子ども両方のためのプログラム」です。</div></div>
       </div>
     </div>
  
@@ -970,8 +1160,9 @@ footer { background: #122820; padding: 56px 0 28px; }
       </h2>
       <p class="final-cta-sub reveal reveal-delay-2">
         「話を聞くだけ」でも大歓迎です。<br>
-        お子さんの年齢・ご希望・不安を教えてください。<br>
-        あなたの親子に合ったプランを、一緒に考えます。
+        お子さんの年齢・ご希望・不安を、何でも話してください。<br>
+        あなたの親子に合ったプランを、一緒に考えます。<br><br>
+        <span style="font-size:13px; opacity:0.6;">カウンセリングは回数無制限・完全無料。他社と比較しながらご検討いただくことも大歓迎です。</span>
       </p>
       <!-- ① LINEバナー④（最終CTA） -->
       <div class="final-cta-buttons reveal reveal-delay-3">
@@ -1046,3 +1237,4 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
+ 
